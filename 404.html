@@ -41,11 +41,23 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="./assets/index-D-BC9p06.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-D_2CzUT4.css">
+  <script type="module" crossorigin src="./assets/index-DNZz_Gp3.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-FQS_OI3_.css">
 </head>
 <body>
     <div id="root"></div>
+    <div id="modal-root"></div>
+    <style>
+        #modal-root {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        #modal-root > * {
+            pointer-events: auto;
+        }
+    </style>
     <!-- crossorigin attribute helps with module loading in sandboxed environments -->
 </body>
 </html>
