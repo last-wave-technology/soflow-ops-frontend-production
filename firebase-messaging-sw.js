@@ -7,12 +7,13 @@ importScripts('https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js'
 importScripts('https://www.gstatic.com/firebasejs/11.6.0/firebase-messaging-compat.js');
 
 firebase.initializeApp({
-  apiKey: 'YOUR_API_KEY',
-  authDomain: 'YOUR_PROJECT_ID.firebaseapp.com',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_PROJECT_ID.appspot.com',
-  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-  appId: 'YOUR_APP_ID',
+  apiKey: "AIzaSyCXoN9XjKe3q0u1HD5qdVOHKLJX5ZoRZF4",
+  authDomain: "soflow-rubios-operations.firebaseapp.com",
+  projectId: "soflow-rubios-operations",
+  storageBucket: "soflow-rubios-operations.firebasestorage.app",
+  messagingSenderId: "327684072993",
+  appId: "1:327684072993:web:d65ce9713219af0dace560",
+  measurementId: "G-GPP0DD5YHV"
 });
 
 const messaging = firebase.messaging();
