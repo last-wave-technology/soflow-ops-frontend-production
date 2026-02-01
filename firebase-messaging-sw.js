@@ -18,12 +18,23 @@ firebase.initializeApp({
 
 const messaging = firebase.messaging();
 
+// Handle background push. We always show here so we control the icon.
+// When testing from Firebase Console: use "Custom data" only (add title/body in data),
+// not the "Notification" block, so the browser doesn't auto-show and you get a single
+// notification with our app icon.
 messaging.onBackgroundMessage((payload) => {
-  const title = payload.notification?.title ?? 'Notification';
+  const data = payload.data ?? {};
+  const title =
+    payload.notification?.title ?? data.title ?? data.notification?.title ?? 'Notification';
+  const body =
+    payload.notification?.body ?? data.body ?? data.notification?.body ?? '';
   const options = {
-    body: payload.notification?.body ?? '',
-    icon: '/favicon.svg',
-    data: payload.data ?? {},
+    body,
+    icon: '/icon-transparent-cropped.png',
+    badge: '/icon-transparent-cropped.png',
+    data: { ...data, url: data.url || '/' },
+    tag: data.type || data.messageId || 'soflow-fcm',
+    renotify: false,
   };
   self.registration.showNotification(title, options);
 });
